@@ -1,15 +1,13 @@
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-    background: linear-gradient(135deg, #ff9d2f, #ff6126);
-    font-family: 'Arial', sans-serif;
-    color: #fff;
+    background-image: url(tic-tac-image.webp);
     text-align: center;
-    overflow: hidden;
+    background-attachment: fixed;
 }
 
 .container {
@@ -38,15 +36,11 @@ body {
     font-size: 8vmin;
     color: #b0413e;
     background-color: #ffffc7;
-    transition: transform 0.2s ease;
-}
-
-.box:hover {
-    transform: scale(1.1);
 }
 
 #resetBtn,
-#new-btn {
+#new-btn,
+#undo-btn {
     padding: 1rem;
     font-size: 1.25rem;
     background-color: #191913;
@@ -54,20 +48,22 @@ body {
     border-radius: 1rem;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 10px 0;
+}
+
+#undo-btn {
+    background-color: #3e8e41;
     transition: background-color 0.3s;
 }
 
-#resetBtn:hover,
-#new-btn:hover {
-    background-color: #333;
+#undo-btn:hover {
+    background-color: #2c6a2e;
 }
 
 #msg {
     color: black;
     font-size: 10vmin;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .msg-container {
@@ -83,11 +79,53 @@ body {
     display: none;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .game {
+        height: 80vmin;
+        width: 80vmin;
+        gap: 2vmin;
     }
-    to {
-        opacity: 1;
+
+    .box {
+        height: 20vmin;
+        width: 20vmin;
+        font-size: 6vmin;
+    }
+
+    #resetBtn,
+    #new-btn,
+    #undo-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    #msg {
+        font-size: 7vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    .game {
+        height: 90vmin;
+        width: 90vmin;
+        gap: 2vmin;
+    }
+
+    .box {
+        height: 22vmin;
+        width: 22vmin;
+        font-size: 5vmin;
+    }
+
+    #resetBtn,
+    #new-btn,
+    #undo-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    #msg {
+        font-size: 5vmin;
     }
 }

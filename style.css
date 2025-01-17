@@ -36,6 +36,11 @@ body {
     font-size: 8vmin;
     color: #b0413e;
     background-color: #ffffc7;
+    transition: transform 0.2s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
 }
 
 #resetBtn,

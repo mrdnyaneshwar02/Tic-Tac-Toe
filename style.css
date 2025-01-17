@@ -1,24 +1,25 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-image: url(https://img.gamedistribution.com/abebecfa89b646448c834963627b325d-512x512.jpeg);
+body {
+    background: linear-gradient(135deg, #ff9d2f, #ff6126);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
     text-align: center;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    
+    overflow: hidden;
 }
 
-.container{
+.container {
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.game{
+.game {
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -26,44 +27,50 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
-    
 }
 
-.box{
+.box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
     color: #b0413e;
     background-color: #ffffc7;
+    transition: transform 0.2s ease;
 }
-#resetBtn{
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+#resetBtn,
+#new-btn {
     padding: 1rem;
     font-size: 1.25rem;
     background-color: #191913;
     color: #fff;
     border-radius: 1rem;
     border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
-#new-btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
-    border-radius: 1rem;
-    border: none;
+#resetBtn:hover,
+#new-btn:hover {
+    background-color: #333;
 }
 
-#msg{
+#msg {
     color: black;
     font-size: 10vmin;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.msg-container{
+.msg-container {
     height: 100vmin;
     display: flex;
     justify-content: center;
@@ -72,6 +79,15 @@ body{
     gap: 4rem;
 }
 
-.hide{
+.hide {
     display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
